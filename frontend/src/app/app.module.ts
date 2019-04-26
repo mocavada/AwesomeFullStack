@@ -1,7 +1,7 @@
-import { AppLoginService } from './busyqacrm/service/app-login.service';
-import { UserAccessComponent } from './busyqacrm/user-access.component';
-import { LoginSucessComponent } from './busyqacrm/login-sucess/login-sucess.component';
-import { LoginComponent } from './busyqacrm/login/login.component';
+import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
+import { TonyLoginComponent } from './projects/tonysecurity/tony-login/tony-login.component';
+import { BcbpDataComponent } from './projects/bcbpcrm/bcbp-data/bcbp-data.component';
+import { BcbpcrmComponent } from './projects/bcbpcrm/bcbpcrm.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
@@ -51,17 +51,6 @@ import { AddJobComponent } from './projects/jobawookie/ui/add/add-job.component'
 import { ListJobComponent } from './projects/jobawookie/ui/list/list-job.component';
 import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.component';
 
-@Injectable()
-export class XhrInterceptor implements HttpInterceptor {
-
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    const xhr = req.clone({
-      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
-    });
-    return next.handle(xhr);
-  }
-}
-
 @NgModule({
    declarations: [
       AppComponent,
@@ -92,9 +81,10 @@ export class XhrInterceptor implements HttpInterceptor {
       AddJobComponent,
       ListJobComponent,
       JobawookieUiComponent,
-      UserAccessComponent,
-      LoginComponent,
-      LoginSucessComponent
+      BcbpcrmComponent,
+      BcbpDataComponent,
+      TonySecurityComponent,
+      TonyLoginComponent
    ],
    imports: [
       BrowserModule,
@@ -106,7 +96,7 @@ export class XhrInterceptor implements HttpInterceptor {
       AutoSizeInputModule,
       routes
    ],
-   providers: [AppLoginService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
+   providers: [],
    bootstrap: [
       AppComponent
    ]

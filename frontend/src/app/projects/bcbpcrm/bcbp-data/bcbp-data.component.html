@@ -1,0 +1,18 @@
+<table class="table table-striped mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of list; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{item.firstname}}</td>
+      <td>{{item.lastname}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.email}}</td>
+  </tbody>
+</table>

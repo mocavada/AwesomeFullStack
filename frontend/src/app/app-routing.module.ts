@@ -1,5 +1,6 @@
-import { LoginSucessComponent } from './busyqacrm/login-sucess/login-sucess.component';
-import { LoginComponent } from './busyqacrm/login/login.component';
+import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
+import { TonyLoginComponent } from './projects/tonysecurity/tony-login/tony-login.component';
+import { BcbpcrmComponent } from './projects/bcbpcrm/bcbpcrm.component';
 
 import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.component';
 import { ImageUploadComponent } from './busyqademo/image-upload/image-upload.component';
@@ -9,7 +10,6 @@ import { ExpCookieSessionComponent } from './services/expcookiesession/exp-cooki
 import { JobListComponent } from './busyqademo/jobbusy/job-list/job-list.component';
 import { UserLoginComponent } from './busyqademo/jobbusy/user-login/user-login.component';
 import { JobPostComponent } from './busyqademo/jobbusy/job-post/job-post.component';
-
 
 import { ProductsComponent } from './lynda/products/products.component';
 import { RedditComponent } from './lynda/reddit/reddit.component';
@@ -31,8 +31,6 @@ import { AboutComponent } from './templates/about/about.component';
 export const router: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: LoginSucessComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'busyqa', children: [
     { path: 'upload', component: ImageUploadComponent}
 ]},
@@ -48,11 +46,16 @@ export const router: Routes = [
     { path: 'operators', component: OperatorsComponent}
 
 ]},
-  {path: 'PostJob' , component: JobPostComponent, canActivate: [LoginGuardService]},
-  {path: 'UserLoginComponent' , component: UserLoginComponent},
-  {path: 'ListJob' , component: JobListComponent},
-  {path: 'CheckLogin', component: ExpCookieSessionComponent},
-  {path: 'jobpost', component: JobawookieUiComponent }
+{ path: 'tony', children: [
+  { path: 'login', component: TonyLoginComponent}
+
+]},
+  { path: 'PostJob' , component: JobPostComponent, canActivate: [LoginGuardService]},
+  { path: 'UserLoginComponent' , component: UserLoginComponent},
+  { path: 'ListJob' , component: JobListComponent},
+  { path: 'CheckLogin', component: ExpCookieSessionComponent},
+  { path: 'jobpost', component: JobawookieUiComponent },
+  { path: 'bcbpcrm', component: BcbpcrmComponent }
 
 ];
 
