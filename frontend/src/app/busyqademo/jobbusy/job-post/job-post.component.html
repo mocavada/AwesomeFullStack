@@ -1,0 +1,60 @@
+<!--use model dreven form and create a function to handle the form submit-->
+
+<form class="form-group" [formGroup]="jobCreateForm" (ngSubmit)="onSubmit(jobCreateForm)">
+  <fieldset formGroupName="jobCompany">
+    <div class="form-group">
+      <label>Company Name:</label>
+      <input type="text" value="" class="form-control" formControlName="companyName"/>
+    </div>
+    <div class="form-group">
+      <label>Contactor Name:</label>
+      <input type="text" value="" class="form-control" formControlName="contactor"/>
+    </div>
+    <div class="form-group">
+      <label>Contactor email:</label>
+      <input type="text" value="" class="form-control" formControlName="email"/>
+    </div>
+    <div class="form-group">
+      <label>Contactor Phone Number:</label>
+      <input type="text" value="" class="form-control" formControlName="phonenumber"/>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" value="" class="form-control" id="jobTitle" formControlName="jobTitle"/>
+  </div>
+
+  <!--Use Fileset to make nest class-->
+  <fieldset formGroupName="jobType">
+    <div class="form-group">
+      <label>Job Type:</label>
+      <br/>
+      <!--Use ngFor to ilerate the jobPost type-->
+      <div class="form-check form-check-inline" *ngFor="let item of jobTypeList; let i = index">
+        <input class="form-check-input" type="radio" id="jobType{{i}}" formControlName="id" value="{{i+1}}">
+        <label class="form-check-label" for="jobType{{i}}">{{item.jobTypeName}}</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label>Job Description:</label>
+    <textarea placeholder="" class="form-control" formControlName="jobDescription"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Requirement:</label>
+    <textarea placeholder="" class="form-control" formControlName="requirement"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Location:</label>
+    <input type="text" value="" class="form-control" id="location" formControlName="location"/>
+
+  </div>
+  <div class="form-group">
+    <label>Salary:</label>
+    <input type="number" value="" class="form-control" id="salary" formControlName="salary"/>
+  </div>
+
+  <input type="submit" value="Post" class="btn btn-primary">
+</form>

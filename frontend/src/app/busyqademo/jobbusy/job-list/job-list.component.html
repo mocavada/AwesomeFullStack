@@ -1,0 +1,59 @@
+
+
+<div class="list-group" *ngFor="let item of jobList; let i = index">
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+  
+        <!--Job Title-->
+        <h5 *ngIf="!item.editMode" class="mb-1">
+          {{item.jobTitle}}
+        </h5>
+        <span *ngIf="item.editMode">Tittle: <input [(ngModel)]="item.jobTitle" AutoSizeInput/></span>
+  
+        <small>{{item.postDate}}</small>
+      </div>
+      <!--Job Description-->
+      <p *ngIf="!item.editMode" class="mb-1">{{item.jobDescription}}</p>
+      <div *ngIf="item.editMode">Description: <input [(ngModel)]="item.jobDescription" AutoSizeInput/></div>
+  
+      <small>{{item.jobCompany.contractor}}</small>
+  
+      <span class="float-right"> 
+        <button type="button" class="btn btn-xs btn-default" (click)="deleteJob(item)">
+          <span class="glyphicon glyphicon-play" aria-hidden="true">X</span>
+        </button>
+  
+        <button *ngIf="!item.editMode" type="button" class="btn btn-xs btn-default" (click)="editMode(item)">
+          <span class="glyphicon glyphicon-play" aria-hidden="true">Edit</span>
+        </button>
+  
+         <button *ngIf="item.editMode" type="button" class="btn btn-xs btn-default" (click)="submitEditedJob(item)">
+          <span class="glyphicon glyphicon-play" aria-hidden="true">Submit</span>
+        </button>
+        </span>
+    </div>
+  
+  </div>
+  
+  <hr/>
+  
+  <div class="row">
+    <div class="col-sm-3" style="margin-bottom: 20px" *ngFor="let item of jobList; let i = index">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{item.jobTitle}}</h5>
+          <p class="card-text">{{item.jobDescription}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngIf="item.jobType!=null" class="list-group-item">{{item.jobType.jobTypeName}}</li>
+          <li *ngIf="item.salary!=null" class="list-group-item">{{item.salary}}</li>
+          <li *ngIf="item.location!=null" class="list-group-item">{{item.location}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="mailto:{{item.jobCompany.email}}" class="card-link">{{item.jobCompany.contractor}}</a>
+          <a href="#" class="card-link float-right">more...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

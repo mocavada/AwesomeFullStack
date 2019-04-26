@@ -1,0 +1,33 @@
+<main class="page bg-white" id="petratings">
+<section class="row align-items-start">
+    
+    <div class="col-8">
+      <div class="row justify-content-center">
+        <app-add
+        (addEvent)="addApt($event)"></app-add>
+      </div>
+      <div class="row row justify-content-center">
+          <app-search
+          (queryEvt)="searchApt($event)"
+          (orderEvt)="orderApt($event)"
+          [orderBy]="orderBy"
+          [orderType]="orderType"
+          ></app-search>
+      </div>
+      <div class="row justify-content-center align-items-end">
+        <app-list 
+        [totalApt]="lastIndex"
+        [aptList]="modifiedList"
+        (deleteEvt)="deleteApt($event)"
+        (updateEvt)="updateApt($event)"></app-list>
+      </div>
+    </div> 
+    <div class="col-4">
+      <div id="pageTitle" class="row">
+        <h2>{{ title }}</h2>
+        <h5>We Love Cute Dogs!</h5> 
+      </div>
+    </div>
+</section>
+</main>
+  

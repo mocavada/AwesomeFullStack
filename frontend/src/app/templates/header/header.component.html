@@ -1,0 +1,65 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a id="siteLogo" class="navbar-brand" routerLink="/about">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"> 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lynda
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/lynda/products"><b>Product Entry</b></a> 
+                <a class="dropdown-item" routerLink="/lynda/reddit"><b>Reddit Crawler</b></a>  
+                <a class="dropdown-item" routerLink="/lynda/artist"><b>Artist Directory</b></a>    
+                <a class="dropdown-item" routerLink="/lynda/pet"><b>Wisdom Pet Shop</b></a>
+                  <div class="dropdown-divider"><hr></div>
+                <a class="dropdown-item" routerLink="/sandbox/observers"><b>RxJS - Observers</b></a>
+                <a class="dropdown-item" routerLink="/sandbox/subjects"><b>RxJS - Subjects</b></a>  
+                <a class="dropdown-item" routerLink="/sandbox/operators"><b>RxJS - Operators</b></a>  
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                BusyQA
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/busyqa/upload"><b>Image Upload</b></a>
+                  <div class="dropdown-divider"><hr></div>
+                <a class="dropdown-item" [routerLink]="['ListJob']"><b>Job List</b></a> 
+                <a class="dropdown-item" [routerLink]="['UserLoginComponent']"><b>Login</b></a> 
+                <a class="dropdown-item" [routerLink]="['CheckLogin']"><b>Check Login</b></a>  
+                <a class="dropdown-item" [routerLink]="['PostJob']"><b>Post Job</b></a>   
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Projects
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/jobpost"><b>JobAWookie</b></a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link">|</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" routerLinkActive="active" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+      </nav>
+</header>

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,400i,700,900');
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+@import url("https://use.typekit.net/jif6plj.css");
+
+body {
+    background-color: #3F4648;
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    font-weight: 200;
+    font-size: 0.8em;
+    color: #95989A;
+   
+}

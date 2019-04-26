@@ -1,0 +1,18 @@
+header {
+    padding: 40px 0;
+    margin: 10px;
+}
+
+h2 {
+    color: #E91E63;
+    font-weight: 800;
+}
+.result {
+    margin: 10px;
+    float: left;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
