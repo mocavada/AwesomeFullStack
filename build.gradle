@@ -53,6 +53,11 @@ dependencies {
 	implementation group: 'commons-io', name: 'commons-io', version: '2.6'
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 
+	// SECURITY
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.4.RELEASE'
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.2'
+
+
 	// AOP
 	implementation('org.springframework.boot:spring-boot-starter-aop')
 

@@ -51,6 +51,18 @@ import { AddJobComponent } from './projects/jobawookie/ui/add/add-job.component'
 import { ListJobComponent } from './projects/jobawookie/ui/list/list-job.component';
 import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.component';
 
+// @Injectable()
+// export class XhrInterceptor implements HttpInterceptor {
+
+//   intercept(req: HttpRequest<any>, next: HttpHandler) {
+//     const xhr = req.clone({
+//       headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+//     });
+//     return next.handle(xhr);
+//   }
+// }
+
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -97,8 +109,7 @@ import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.co
       routes
    ],
    providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+  //  providers: [TonyLoginService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
+   bootstrap: [AppComponent]
 })
 export class AppModule { }

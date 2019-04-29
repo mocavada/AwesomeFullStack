@@ -1,5 +1,6 @@
-import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
 import { TonyLoginComponent } from './projects/tonysecurity/tony-login/tony-login.component';
+import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
+
 import { BcbpcrmComponent } from './projects/bcbpcrm/bcbpcrm.component';
 
 import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.component';
@@ -28,6 +29,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './templates/about/about.component';
 
 
+
 export const router: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
@@ -47,7 +49,8 @@ export const router: Routes = [
 
 ]},
 { path: 'tony', children: [
-  { path: 'login', component: TonyLoginComponent}
+  { path: 'login', component: TonyLoginComponent},
+  { path: 'resource', component: TonySecurityComponent}
 
 ]},
   { path: 'PostJob' , component: JobPostComponent, canActivate: [LoginGuardService]},

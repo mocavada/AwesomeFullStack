@@ -21,7 +21,6 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-
   }
 
   createForm() {
@@ -36,7 +35,7 @@ export class UserLoginComponent implements OnInit {
     console.log('fackLoginFlag = ' + this.dService.fackLoginFlag);
 
     if (f.valid) {
-      console.log('this form i sgood to go.');
+      console.log('this form is good to go.');
     }
 
     console.log(f.value);
