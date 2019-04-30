@@ -1,4 +1,7 @@
-import { TonyLoginComponent } from './projects/tonysecurity/tony-login/tony-login.component';
+import { TonyAdminComponent } from './projects/tonysecurity/tony-admin/tony-admin.component';
+import { TonyAuditComponent } from './projects/tonysecurity/tony-audit/tony-audit.component';
+import { TonySalesComponent } from './projects/tonysecurity/tony-sales/tony-sales.component';
+import { TonyLoginComponent } from './projects/tonysecurity/login/tony-login.component';
 import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
 
 import { BcbpcrmComponent } from './projects/bcbpcrm/bcbpcrm.component';
@@ -29,7 +32,6 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './templates/about/about.component';
 
 
-
 export const router: Routes = [
   { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
@@ -50,8 +52,10 @@ export const router: Routes = [
 ]},
 { path: 'tony', children: [
   { path: 'login', component: TonyLoginComponent},
-  { path: 'resource', component: TonySecurityComponent}
-
+  { path: 'resource', component: TonySecurityComponent},
+  { path: 'admin', component: TonyAdminComponent},
+  { path: 'audit', component: TonyAuditComponent},
+  { path: 'sales', component: TonySalesComponent}
 ]},
   { path: 'PostJob' , component: JobPostComponent, canActivate: [LoginGuardService]},
   { path: 'UserLoginComponent' , component: UserLoginComponent},

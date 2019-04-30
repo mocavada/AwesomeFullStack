@@ -1,17 +1,23 @@
 package com.mocavada.project.tonysecurity.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="USER")
+@Table(name = "USER",
+        uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 public class User {
     @Id
     @Column(name="USER_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name="USERNAME", nullable = false, unique = true)
+
+    @Column(name="username", nullable=false, unique=true)
     private String username;
-    @Column(name="PASSWORD")
+
+    @Column(name="password")
     private String password;
 
     public long getId() {

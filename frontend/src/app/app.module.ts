@@ -1,5 +1,8 @@
+import { TonyAdminComponent } from './projects/tonysecurity/tony-admin/tony-admin.component';
+import { TonyAuditComponent } from './projects/tonysecurity/tony-audit/tony-audit.component';
+import { TonySalesComponent } from './projects/tonysecurity/tony-sales/tony-sales.component';
 import { TonySecurityComponent } from './projects/tonysecurity/tony-security.component';
-import { TonyLoginComponent } from './projects/tonysecurity/tony-login/tony-login.component';
+import { TonyLoginComponent } from './projects/tonysecurity/login/tony-login.component';
 import { BcbpDataComponent } from './projects/bcbpcrm/bcbp-data/bcbp-data.component';
 import { BcbpcrmComponent } from './projects/bcbpcrm/bcbpcrm.component';
 
@@ -51,6 +54,7 @@ import { AddJobComponent } from './projects/jobawookie/ui/add/add-job.component'
 import { ListJobComponent } from './projects/jobawookie/ui/list/list-job.component';
 import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.component';
 
+
 // @Injectable()
 // export class XhrInterceptor implements HttpInterceptor {
 
@@ -96,7 +100,10 @@ import { JobawookieUiComponent } from './projects/jobawookie/ui/jobawookie-ui.co
       BcbpcrmComponent,
       BcbpDataComponent,
       TonySecurityComponent,
-      TonyLoginComponent
+      TonyLoginComponent,
+      TonyAdminComponent,
+      TonyAuditComponent,
+      TonySalesComponent
    ],
    imports: [
       BrowserModule,

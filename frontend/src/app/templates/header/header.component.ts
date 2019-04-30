@@ -1,4 +1,4 @@
-import { TonyLoginService } from './../../services/tonylogin/tony-login.service';
+import { TonyLoginService } from '../../projects/tonysecurity/service/tony-login.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';

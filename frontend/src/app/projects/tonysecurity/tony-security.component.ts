@@ -1,4 +1,4 @@
-import { TonyLoginService } from './../../services/tonylogin/tony-login.service';
+import { TonyLoginService } from './service/tony-login.service';
 import { environment } from './../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,11 +13,12 @@ export class TonySecurityComponent {
 
 
   private urlRoot = environment.serverAddress;
-  title = 'Demo';
+  title = 'USER';
   greeting = {};
 
   constructor(private http: HttpClient) {
-    http.get(this.urlRoot + '/tony/resource').subscribe(data => this.greeting = data);
+    http.get(this.urlRoot + '/tony/resource')
+    .subscribe(data => this.greeting = data);
   }
 
   // constructor(private app: TonyLoginService,

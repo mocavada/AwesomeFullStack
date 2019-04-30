@@ -1,0 +1,15 @@
+//  Create New Table Form 2 Entity:
+
+//    @OneToMany( mappedBy = "USER",
+//                fetch = FetchType.EAGER,
+//                cascade = CascadeType.ALL)
+//    private List<AuthGroup> authGroups = new ArrayList<>();
+
+
+
+//    @OneToMany(fetch = FetchType.EAGER,
+//            cascade = CascadeType.ALL)
+//    @JoinTable(name = "AUTH_GROUP",
+//        joinColumns = {@JoinColumn(name="USERNAME")},
+//        inverseJoinColumns = {@JoinColumn(name = "ROLE")})
+//    private List<Role> roles = new ArrayList<>();
