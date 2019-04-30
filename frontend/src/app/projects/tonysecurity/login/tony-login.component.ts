@@ -59,6 +59,7 @@ export class TonyLoginComponent implements OnInit {
 
   logout() {
     this.router.navigate(['/tony/logout']);
+    console.log('Click Logout');
   }
 
 

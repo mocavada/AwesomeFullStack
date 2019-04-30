@@ -1,9 +1,10 @@
 import { environment } from '../../../../environments/environment';
 
 import { TonyUser } from '../pojo/tony-user';
-import { HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { HttpErrorResponse, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, Observable, pipe, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 import {map, take, catchError} from 'rxjs/operators';
 
@@ -19,8 +20,10 @@ export class TonyLoginService {
 
   authenticated = false;
   private urlRoot = environment.serverAddress;
+  credentials = {username: '', password: ''};
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private router: Router) {
   }
 
   // LOGIN
@@ -29,25 +32,26 @@ export class TonyLoginService {
     .post<TonyUser>(environment.serverAddress + '/tony/login', tonyUser);
   }
 
+  // login() {
+  //   this.authenticate(this.credentials, () => {
+  //       this.router.navigateByUrl('/tony/login');
+  //   });
+  //   return false;
+  // }
 
+  // authenticate(credentials, callback) {
 
-//   authenticate(credentials: any, callback: any) {
+  //   const headers = new HttpHeaders(credentials ? {
+  //       authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+  //   } : {});
 
-//         const headers = new HttpHeaders(credentials ? {
-//             authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
-//         } : {});
-
-//         this.http.get(this.urlRoot + '/tony/user', {headers}).subscribe(response => {
-//             if (response['name']) {
-//                 this.authenticated = true;
-//             } else {
-//                 this.authenticated = false;
-//             }
-//             return callback && callback();
-//         });
-
-//     }
-
-
+  //   this.http.get(environment.serverAddress + '/tony/user', {headers: headers}).subscribe(response => {
+  //       if (response['username']) {
+  //           this.authenticated = true;
+  //       } else {
+  //           this.authenticated = false;
+  //       }
+  //       return callback && callback();
+  //   });
 
 }
